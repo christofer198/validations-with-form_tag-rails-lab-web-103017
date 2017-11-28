@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def crete
+  def create
     @post = Post.find(params[:id])
     @post.assign_attributes(post_params)
 
