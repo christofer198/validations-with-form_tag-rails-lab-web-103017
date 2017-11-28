@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.find(params[:id])
+    @post = Post.new
     @post.assign_attributes(post_params)
 
     if @post.valid?
