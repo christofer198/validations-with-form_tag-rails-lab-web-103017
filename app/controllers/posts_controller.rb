@@ -7,6 +7,18 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def crete
+    @post = Post.find(params[:id])
+    @post.assign_attributes(post_params)
+
+    if @post.valid?
+      @post.save
+      redirect_to post_path(@post)
+    else
+      render :edit
+    end
+  end
+
   def update
     @post = Post.find(params[:id])
     @post.assign_attributes(post_params)
